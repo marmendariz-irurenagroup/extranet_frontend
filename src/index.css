@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* "Placeholder" visual del input date cuando está vacío (Chrome/Edge/Safari) */
+.date-input[data-empty="true"] {
+    color: rgb(82 82 82);
+    /* neutral-600 */
+}
+
+.date-input[data-empty="true"]::-webkit-datetime-edit,
+.date-input[data-empty="true"]::-webkit-datetime-edit-year-field,
+.date-input[data-empty="true"]::-webkit-datetime-edit-month-field,
+.date-input[data-empty="true"]::-webkit-datetime-edit-day-field,
+.date-input[data-empty="true"]::-webkit-datetime-edit-text {
+    color: rgb(82 82 82);
+    /* neutral-600 */
+}
+
+/* Cuando tenga valor */
+.date-input[data-empty="false"] {
+    color: rgb(229 229 229);
+    /* neutral-200 */
+}
+
+.date-input[data-empty="false"]::-webkit-datetime-edit,
+.date-input[data-empty="false"]::-webkit-datetime-edit-year-field,
+.date-input[data-empty="false"]::-webkit-datetime-edit-month-field,
+.date-input[data-empty="false"]::-webkit-datetime-edit-day-field,
+.date-input[data-empty="false"]::-webkit-datetime-edit-text {
+    color: rgb(229 229 229);
+    /* neutral-200 */
+}
+
+/* Icono del calendario cuando el input está vacío */
+.date-input[data-empty="true"]::-webkit-calendar-picker-indicator {
+    filter: invert(45%) sepia(0%) saturate(0%) brightness(85%);
+    opacity: 0.7;
+}
+
+/* Icono del calendario cuando el input tiene valor */
+.date-input[data-empty="false"]::-webkit-calendar-picker-indicator {
+    color: rgb(229 229 229);
+}
+
+/* Hover (opcional, queda muy bien) */
+.date-input::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+    cursor: pointer;
+}
